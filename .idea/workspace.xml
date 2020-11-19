@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="55f70bc0-5109-4feb-a948-09ac739b1246" name="Default Changelist" comment="" />
+    <list default="true" id="55f70bc0-5109-4feb-a948-09ac739b1246" name="Default Changelist" comment="init">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +37,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -125,6 +155,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1iocx1Ucpvt6TwpYYpChyrlEVMQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -155,25 +186,57 @@
       <option name="presentableId" value="Default" />
       <updated>1602577630318</updated>
       <workItem from="1602577632591" duration="2461000" />
-      <workItem from="1602638914768" duration="9623000" />
+      <workItem from="1602638914768" duration="10204000" />
+      <workItem from="1605769592917" duration="2750000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1602679554469</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602679554469</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="458" y="183" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602676999432">
-      <screen x="0" y="23" width="1440" height="808" />
+    <state x="458" y="181" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605770824126">
+      <screen x="0" y="23" width="1440" height="797" />
     </state>
+    <state x="458" y="181" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.797@0.23.1440.797" timestamp="1605770824126" />
     <state x="458" y="183" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.808@0.23.1440.808" timestamp="1602676999432" />
     <state x="543" y="352" key="NewPhpFileDialog" timestamp="1602647197314">
       <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state x="543" y="352" key="NewPhpFileDialog/0.23.1440.806@0.23.1440.806" timestamp="1602647197314" />
-    <state x="427" y="176" width="586" height="490" key="find.popup" timestamp="1602642270465">
-      <screen x="0" y="23" width="1440" height="808" />
+    <state x="320" y="161" key="Vcs.Push.Dialog.v2" timestamp="1602679633443">
+      <screen x="0" y="23" width="1440" height="811" />
     </state>
+    <state x="320" y="161" key="Vcs.Push.Dialog.v2/0.23.1440.811@0.23.1440.811" timestamp="1602679633443" />
+    <state x="427" y="174" width="586" height="490" key="find.popup" timestamp="1605772160336">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state x="427" y="174" width="586" height="490" key="find.popup/0.23.1440.797@0.23.1440.797" timestamp="1605772160336" />
     <state x="427" y="176" width="586" height="490" key="find.popup/0.23.1440.808@0.23.1440.808" timestamp="1602642270465" />
   </component>
 </project>
