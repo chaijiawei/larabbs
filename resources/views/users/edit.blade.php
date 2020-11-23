@@ -29,6 +29,9 @@
                             <div class="form-group">
                                 <label for="avatar">个人头像</label>
                                 <input name="avatar" id="avatar" type="file" class="form-control-file">
+                                @if($user->avatar)
+                                    <img class="my-4" src="{{ $user->avatar }}" alt="{{ $user->name }}">
+                                @endif
                             </div>
 
                             <button type="submit" class="btn btn-primary">更改</button>

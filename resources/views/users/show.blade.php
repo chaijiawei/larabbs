@@ -8,6 +8,7 @@
 
             <h3>{{ $user->name }}</h3>
             <p>{{ $user->email }}</p>
+            <img class="img-thumbnail" src="{{ $user->avatar }}" alt="{{ $user->name }}">
         </div>
     </div>
 @stop

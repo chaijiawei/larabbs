@@ -19,19 +19,20 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55f70bc0-5109-4feb-a948-09ac739b1246" name="Default Changelist" comment="重置密码的提示">
+    <list default="true" id="55f70bc0-5109-4feb-a948-09ac739b1246" name="Default Changelist" comment="用户编辑">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UsersRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UsersRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +195,8 @@
       <updated>1602577630318</updated>
       <workItem from="1602577632591" duration="2461000" />
       <workItem from="1602638914768" duration="10204000" />
-      <workItem from="1605769592917" duration="6348000" />
+      <workItem from="1605769592917" duration="7083000" />
+      <workItem from="1606112676698" duration="7290000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1602679554469</created>
@@ -210,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605772694869</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="用户编辑">
+      <created>1605776938116</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605776938116</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,18 +230,32 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="init" />
     <MESSAGE value="重置密码的提示" />
-    <option name="LAST_COMMIT_MESSAGE" value="重置密码的提示" />
+    <MESSAGE value="用户编辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="用户编辑" />
   </component>
   <component name="WindowStateProjectService">
     <state x="458" y="181" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605776332256">
@@ -244,14 +267,15 @@
       <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state x="543" y="352" key="NewPhpFileDialog/0.23.1440.806@0.23.1440.806" timestamp="1602647197314" />
-    <state x="320" y="161" key="Vcs.Push.Dialog.v2" timestamp="1602679633443">
-      <screen x="0" y="23" width="1440" height="811" />
-    </state>
-    <state x="320" y="161" key="Vcs.Push.Dialog.v2/0.23.1440.811@0.23.1440.811" timestamp="1602679633443" />
-    <state x="427" y="174" width="586" height="490" key="find.popup" timestamp="1605772160336">
+    <state x="320" y="159" key="Vcs.Push.Dialog.v2" timestamp="1605776943760">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
-    <state x="427" y="174" width="586" height="490" key="find.popup/0.23.1440.797@0.23.1440.797" timestamp="1605772160336" />
+    <state x="320" y="159" key="Vcs.Push.Dialog.v2/0.23.1440.797@0.23.1440.797" timestamp="1605776943760" />
+    <state x="320" y="161" key="Vcs.Push.Dialog.v2/0.23.1440.811@0.23.1440.811" timestamp="1602679633443" />
+    <state x="427" y="174" width="586" height="490" key="find.popup" timestamp="1606118622577">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state x="427" y="174" width="586" height="490" key="find.popup/0.23.1440.797@0.23.1440.797" timestamp="1606118622577" />
     <state x="427" y="176" width="586" height="490" key="find.popup/0.23.1440.808@0.23.1440.808" timestamp="1602642270465" />
   </component>
 </project>

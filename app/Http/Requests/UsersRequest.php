@@ -28,8 +28,17 @@ class UsersRequest extends FormRequest
             'name' => ['required', 'string', 'max:255',
                 Rule::unique('users')->ignore($this->user()),
             ],
-            'avatar' => ['required', 'image'],
+            'avatar' => ['nullable', 'image'],
             'intro' => ['required', 'string', 'max:255']
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'name' => '用户名',
+            'avatar' => '头像',
+            'intro' => '个人简介'
         ];
     }
 }
