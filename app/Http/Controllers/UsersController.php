@@ -23,7 +23,7 @@ class UsersController extends Controller
         $data = $request->validated();
 
         if(isset($data['avatar']) && $data['avatar']) {
-            $data['avatar'] = $upload->upload($data['avatar']);
+            $data['avatar'] = $upload->upload($data['avatar'], 'avatars', 320);
         }
         $user->update($data);
 
