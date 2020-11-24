@@ -42,7 +42,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function getAvatarAttribute($value)
     {
-        if(filter_var($value, FILTER_VALIDATE_URL) === false) {
+        if($value && filter_var($value, FILTER_VALIDATE_URL) === false) {
             $value = Storage::disk(ImageUpload::DISK)->url($value);
         }
 
