@@ -25,11 +25,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55f70bc0-5109-4feb-a948-09ac739b1246" name="Default Changelist" comment="头像裁剪">
+    <list default="true" id="55f70bc0-5109-4feb-a948-09ac739b1246" name="Default Changelist" comment="授权访问">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,10 +169,13 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/image" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/image" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Models" />
     </key>
@@ -194,7 +198,9 @@
       <workItem from="1602638914768" duration="10204000" />
       <workItem from="1605769592917" duration="7083000" />
       <workItem from="1606112676698" duration="7349000" />
-      <workItem from="1606198174084" duration="4024000" />
+      <workItem from="1606198174084" duration="4162000" />
+      <workItem from="1606207609097" duration="29000" />
+      <workItem from="1606286296769" duration="6753000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1602679554469</created>
@@ -231,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606201966468</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="授权访问">
+      <created>1606207539279</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606207539279</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +282,8 @@
     <MESSAGE value="用户编辑" />
     <MESSAGE value="图片上传" />
     <MESSAGE value="头像裁剪" />
-    <option name="LAST_COMMIT_MESSAGE" value="头像裁剪" />
+    <MESSAGE value="授权访问" />
+    <option name="LAST_COMMIT_MESSAGE" value="授权访问" />
   </component>
   <component name="WindowStateProjectService">
     <state x="458" y="181" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605776332256">
@@ -281,10 +295,10 @@
       <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state x="543" y="352" key="NewPhpFileDialog/0.23.1440.806@0.23.1440.806" timestamp="1602647197314" />
-    <state x="320" y="159" key="Vcs.Push.Dialog.v2" timestamp="1606125735567">
+    <state x="320" y="159" key="Vcs.Push.Dialog.v2" timestamp="1606207634842">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
-    <state x="320" y="159" key="Vcs.Push.Dialog.v2/0.23.1440.797@0.23.1440.797" timestamp="1606125735567" />
+    <state x="320" y="159" key="Vcs.Push.Dialog.v2/0.23.1440.797@0.23.1440.797" timestamp="1606207634842" />
     <state x="320" y="161" key="Vcs.Push.Dialog.v2/0.23.1440.811@0.23.1440.811" timestamp="1602679633443" />
     <state x="427" y="174" width="586" height="490" key="find.popup" timestamp="1606200424376">
       <screen x="0" y="23" width="1440" height="797" />

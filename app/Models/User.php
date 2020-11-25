@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Service\ImageUpload;
+use DateTimeInterface;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -42,10 +43,19 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function getAvatarAttribute($value)
     {
-        if($value && filter_var($value, FILTER_VALIDATE_URL) === false) {
+        if(! $value) {
+            $value = asset('image/default.png');
+        }
+
+        if(filter_var($value, FILTER_VALIDATE_URL) === false) {
             $value = Storage::disk(ImageUpload::DISK)->url($value);
         }
 
         return $value;
+    }
+
+    protected function serializeDate(DateTimeInterface $date)
+    {
+        return $date->format('Y-m-d H:i:s');
     }
 }

@@ -18,3 +18,5 @@ Auth::routes(['verify' => true]);
 Route::get('/', 'PagesController@index')->name('home');
 
 Route::resource('users', 'UsersController');
+
+Route::resource('topics', 'TopicsController');
