@@ -58,4 +58,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $date->format('Y-m-d H:i:s');
     }
+
+    public function topics()
+    {
+        return $this->hasMany(Topic::class);
+    }
 }

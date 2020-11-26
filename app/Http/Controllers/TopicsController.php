@@ -7,9 +7,9 @@ use App\Models\Topic;
 
 class TopicsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $topics = Topic::query()->paginate();
+        $topics = Topic::query()->withOrder($request->order)->paginate();
         return view('topics.index', compact('topics'));
     }
 }

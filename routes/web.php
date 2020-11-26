@@ -20,3 +20,5 @@ Route::get('/', 'PagesController@index')->name('home');
 Route::resource('users', 'UsersController');
 
 Route::resource('topics', 'TopicsController');
+
+Route::resource('categories', 'CategoriesController')->only('show');

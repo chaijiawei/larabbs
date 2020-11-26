@@ -25,11 +25,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55f70bc0-5109-4feb-a948-09ac739b1246" name="Default Changelist" comment="授权访问">
+    <list default="true" id="55f70bc0-5109-4feb-a948-09ac739b1246" name="Default Changelist" comment="话题分类，数据填充">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TopicsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TopicsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Topic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Topic.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/topics/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/topics/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -200,7 +203,9 @@
       <workItem from="1606112676698" duration="7349000" />
       <workItem from="1606198174084" duration="4162000" />
       <workItem from="1606207609097" duration="29000" />
-      <workItem from="1606286296769" duration="6753000" />
+      <workItem from="1606286296769" duration="6849000" />
+      <workItem from="1606372592234" duration="1759000" />
+      <workItem from="1606374780948" duration="3328000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1602679554469</created>
@@ -244,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606207539279</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="话题分类，数据填充">
+      <created>1606294313373</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1606294313373</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +295,8 @@
     <MESSAGE value="图片上传" />
     <MESSAGE value="头像裁剪" />
     <MESSAGE value="授权访问" />
-    <option name="LAST_COMMIT_MESSAGE" value="授权访问" />
+    <MESSAGE value="话题分类，数据填充" />
+    <option name="LAST_COMMIT_MESSAGE" value="话题分类，数据填充" />
   </component>
   <component name="WindowStateProjectService">
     <state x="458" y="181" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605776332256">
@@ -295,10 +308,10 @@
       <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state x="543" y="352" key="NewPhpFileDialog/0.23.1440.806@0.23.1440.806" timestamp="1602647197314" />
-    <state x="320" y="159" key="Vcs.Push.Dialog.v2" timestamp="1606207634842">
+    <state x="320" y="159" key="Vcs.Push.Dialog.v2" timestamp="1606294318217">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
-    <state x="320" y="159" key="Vcs.Push.Dialog.v2/0.23.1440.797@0.23.1440.797" timestamp="1606207634842" />
+    <state x="320" y="159" key="Vcs.Push.Dialog.v2/0.23.1440.797@0.23.1440.797" timestamp="1606294318217" />
     <state x="320" y="161" key="Vcs.Push.Dialog.v2/0.23.1440.811@0.23.1440.811" timestamp="1602679633443" />
     <state x="427" y="174" width="586" height="490" key="find.popup" timestamp="1606200424376">
       <screen x="0" y="23" width="1440" height="797" />
