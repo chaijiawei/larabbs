@@ -10,7 +10,8 @@ class UsersController extends Controller
 {
     public function show(User $user)
     {
-        return view('users.show', compact('user'));
+        $topics = $user->topics()->latest()->paginate();
+        return view('users.show', compact('user', 'topics'));
     }
 
     public function edit(User $user)

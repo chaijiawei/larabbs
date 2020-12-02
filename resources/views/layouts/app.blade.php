@@ -30,9 +30,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
+                        <li class="nav-item @if(request()->routeIs('topics.index')) active @endif">
                             <a class="nav-link" href="{{ route('topics.index') }}">话题</a>
                         </li>
+                        @include('shared._category_nav', ['categories' => \App\Models\Category::all()])
                     </ul>
 
                     <!-- Right Side Of Navbar -->
