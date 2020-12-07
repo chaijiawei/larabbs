@@ -9,7 +9,7 @@ use DateTimeInterface;
 class Topic extends Model
 {
     protected $fillable = [
-        'title', 'body', 'category_id', 'user_id'
+        'title', 'body', 'category_id', 'user_id', 'excerpt',
     ];
 
     protected function serializeDate(DateTimeInterface $date)

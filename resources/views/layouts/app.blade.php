@@ -49,6 +49,11 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item">
+                                <a href="{{ route('topics.create') }}" class="nav-link">
+                                    <i class="fa fa-plus"></i>
+                                </a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <img class="rounded-circle" width="32" src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->name }}">

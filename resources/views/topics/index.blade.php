@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '话题列表')
+@section('title', $category->name ?? '话题列表')
 
 @section('content')
     <div class="container">
@@ -64,7 +64,14 @@
                 </div>
             </div>
             <div class="col-md-3">
-
+                <div class="card">
+                    <div class="card-body">
+                        <a href="{{ route('topics.create') }}" class="btn btn-success btn-block">
+                            <i class="fa fa-pencil"></i>
+                            新建话题
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
