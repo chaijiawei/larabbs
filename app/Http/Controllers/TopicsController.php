@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TopicsRequest;
+use App\Service\ImageUpload;
 use Illuminate\Http\Request;
 use App\Models\Topic;
 use Illuminate\Support\Facades\Auth;
@@ -38,5 +39,16 @@ class TopicsController extends Controller
     public function show(Topic $topic)
     {
         return view('topics.show', compact('topic'));
+    }
+
+    public function upload(Request $request, ImageUpload $upload)
+    {
+        if(! Auth::check()) {
+            abort(500);
+        }
+        $file = $request->file('file');
+        $img = $upload->upload($file, 'topics', 800);
+
+        return ['location' => $upload->getFullUrl($img)];
     }
 }

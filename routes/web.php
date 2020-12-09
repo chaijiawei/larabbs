@@ -20,5 +20,6 @@ Route::get('/', 'PagesController@index')->name('home');
 Route::resource('users', 'UsersController');
 
 Route::resource('topics', 'TopicsController');
+Route::middleware(['throttle:60,1'])->post('topics/upload', 'TopicsController@upload')->name('topics.upload');
 
 Route::resource('categories', 'CategoriesController')->only('show');

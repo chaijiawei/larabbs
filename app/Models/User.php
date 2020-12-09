@@ -7,7 +7,6 @@ use DateTimeInterface;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -47,11 +46,7 @@ class User extends Authenticatable implements MustVerifyEmail
             $value = asset('image/default.png');
         }
 
-        if(filter_var($value, FILTER_VALIDATE_URL) === false) {
-            $value = Storage::disk(ImageUpload::DISK)->url($value);
-        }
-
-        return $value;
+        return (new ImageUpload)->getFullUrl($value);
     }
 
     protected function serializeDate(DateTimeInterface $date)

@@ -24,6 +24,14 @@ class ImageUpload {
         return $shortPath;
     }
 
+    public function getFullUrl($shortPath)
+    {
+        if(filter_var($shortPath, FILTER_VALIDATE_URL) !== false) {
+            return $shortPath;
+        }
+        return Storage::disk(self::DISK)->url($shortPath);
+    }
+
     protected function resize($imgPath, $width)
     {
         $img = Image::make($imgPath);
