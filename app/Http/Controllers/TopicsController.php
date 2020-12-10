@@ -21,9 +21,9 @@ class TopicsController extends Controller
         return view('topics.index', compact('topics'));
     }
 
-    public function create()
+    public function create(Topic $topic)
     {
-        return view('topics.create');
+        return view('topics.create', compact('topic'));
     }
 
     public function store(TopicsRequest $request)
@@ -39,6 +39,23 @@ class TopicsController extends Controller
     public function show(Topic $topic)
     {
         return view('topics.show', compact('topic'));
+    }
+
+    public function edit(Topic $topic)
+    {
+        $this->authorize('update', $topic);
+        return view('topics.create', compact('topic'));
+    }
+
+    public function update(TopicsRequest $request, Topic $topic)
+    {
+        $this->authorize('update', $topic);
+
+        $data = $request->validated();
+        $topic->update($data);
+
+        flash()->success('话题修改成功');
+        return redirect()->route('topics.show', $topic);
     }
 
     public function upload(Request $request, ImageUpload $upload)

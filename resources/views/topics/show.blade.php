@@ -21,12 +21,22 @@
                             <h3>
                                 {{ $topic->title }}
                             </h3>
-                            <span class="text-secondary d-block">{{ $topic->created_at->diffForHumans() }}</span>
+                            <span class="text-secondary d-block">{{ $topic->updated_at->diffForHumans() }}</span>
                         </div>
 
                         <div class="my-4" id="topic-body">
                             {!! $topic->body !!}
                         </div>
+
+                        <hr>
+                        <a href="{{ route('topics.edit', $topic) }}" class="btn btn-sm btn-outline-secondary">
+                            <i class="fa fa-edit"></i>
+                            编辑
+                        </a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary">
+                            <i class="fa fa-trash"></i>
+                            删除
+                        </a>
                     </div>
                 </div>
 
