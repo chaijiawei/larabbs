@@ -48,17 +48,17 @@
     </div>
 @stop
 
-@push('script')
-    <script>
-        $(function() {
-            tinymce.init({
-                selector: '#body',
-                height: 300,
-                content_style: "img {max-width:100%;}",
-                language:'zh_CN',
-                plugins: 'image',
-                images_upload_url: '{{ route('topics.upload') }}',
-            });
-        });
-    </script>
-@endpush
+{{--@push('script')--}}
+{{--    <script>--}}
+{{--        $(function() {--}}
+{{--            tinymce.init({--}}
+{{--                selector: '#body',--}}
+{{--                height: 300,--}}
+{{--                content_style: "img {max-width:100%;}",--}}
+{{--                language:'zh_CN',--}}
+{{--                plugins: 'image',--}}
+{{--                images_upload_url: '{{ route('topics.upload') }}',--}}
+{{--            });--}}
+{{--        });--}}
+{{--    </script>--}}
+{{--@endpush--}}

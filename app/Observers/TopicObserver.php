@@ -9,6 +9,7 @@ class TopicObserver
 {
     public function saving(Topic $topic)
     {
+        $topic->body = clean($topic->body, 'topic');
         $topic->excerpt = $this->makeExcerpt($topic->body);
     }
 

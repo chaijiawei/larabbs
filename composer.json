@@ -17,6 +17,7 @@
         "laravel/framework": "^7.24",
         "laravel/tinker": "^2.0",
         "mews/captcha": "^3.2",
+        "mews/purifier": "^3.3",
         "overtrue/laravel-lang": "^4.1"
     },
     "require-dev": {
