@@ -12,7 +12,7 @@ class TopicsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['create']);
+        $this->middleware('auth')->except(['index', 'show', 'upload']);
     }
 
     public function index(Request $request)
@@ -56,6 +56,15 @@ class TopicsController extends Controller
 
         flash()->success('话题修改成功');
         return redirect()->route('topics.show', $topic);
+    }
+
+    public function destroy(Topic $topic)
+    {
+        $this->authorize('destroy', $topic);
+
+        $topic->delete();
+        flash()->success('帖子删除成功');
+        return redirect()->route('topics.index');
     }
 
     public function upload(Request $request, ImageUpload $upload)
