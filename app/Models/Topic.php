@@ -9,7 +9,7 @@ use DateTimeInterface;
 class Topic extends Model
 {
     protected $fillable = [
-        'title', 'body', 'category_id', 'user_id', 'excerpt',
+        'title', 'body', 'category_id', 'user_id', 'excerpt', 'slug',
     ];
 
     protected function serializeDate(DateTimeInterface $date)
@@ -51,5 +51,10 @@ class Topic extends Model
     public function scopeRecentCreate(Builder $query)
     {
         return $query->orderByDesc('created_at');
+    }
+
+    public function link($params = [])
+    {
+        return route('topics.show', array_merge(['topic' => $this->id, 'slug' => $this->slug], $params));
     }
 }

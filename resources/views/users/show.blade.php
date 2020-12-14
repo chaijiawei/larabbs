@@ -49,7 +49,7 @@
                         <ul class="list-group list-group-flush">
                             @foreach($topics as $topic)
                                 <li class="list-group-item">
-                                    <a href="{{ route('topics.show', $topic) }}">{{ $topic->title }}</a>
+                                    <a href="{{ $topic->link() }}">{{ $topic->title }}</a>
                                     <span class="float-right text-secondary">{{ $topic->created_at->diffForHumans() }}</span>
                                 </li>
                             @endforeach

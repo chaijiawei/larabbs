@@ -19,7 +19,8 @@ class CreateTopicsTable extends Migration
             $table->text('body');
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('user_id');
-            $table->text('excerpt');
+            $table->text('excerpt')->nullable();
+            $table->string('slug')->nullable();
             $table->timestamps();
         });
     }

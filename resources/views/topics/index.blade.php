@@ -37,7 +37,7 @@
                                         <img width="32" src="{{ $topic->user->avatar }}" class="mr-3" alt="{{ $topic->user->name }}">
                                     </a>
                                     <div class="media-body">
-                                        <a href="{{ route('topics.show', $topic) }}">{{ $topic->title }}</a>
+                                        <a href="{{ $topic->link() }}">{{ $topic->title }}</a>
                                         <small class="d-block">
                                             <a class="text-secondary" href="{{ route('categories.show', $topic->category) }}">
                                                 <i class="far fa-folder"></i>

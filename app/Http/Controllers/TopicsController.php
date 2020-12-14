@@ -33,11 +33,14 @@ class TopicsController extends Controller
         $topic = Auth::user()->topics()->create($data);
 
         flash()->success('话题创建成功');
-        return redirect()->route('topics.show', $topic);
+        return redirect($topic->link());
     }
 
-    public function show(Topic $topic)
+    public function show(Topic $topic, Request $request)
     {
+        if($topic->slug && $request->slug !== $topic->slug) {
+            return redirect($topic->link());
+        }
         return view('topics.show', compact('topic'));
     }
 
@@ -55,7 +58,7 @@ class TopicsController extends Controller
         $topic->update($data);
 
         flash()->success('话题修改成功');
-        return redirect()->route('topics.show', $topic);
+        return redirect($topic->link());
     }
 
     public function destroy(Topic $topic)

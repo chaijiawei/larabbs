@@ -15,11 +15,18 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['verify' => true]);
 
+Route::get('phpinfo', function() {
+   phpinfo();
+});
+
 Route::get('/', 'PagesController@index')->name('home');
 
 Route::resource('users', 'UsersController');
 
-Route::resource('topics', 'TopicsController');
-Route::middleware(['throttle:60,1'])->post('topics/upload', 'TopicsController@upload')->name('topics.upload');
+Route::resource('topics', 'TopicsController')->except('show');
+Route::get('topics/{topic}/{slug?}', 'TopicsController@show')->name('topics.show');
+Route::middleware(['throttle:60,1'])
+    ->post('topics/upload', 'TopicsController@upload')
+    ->name('topics.upload');
 
 Route::resource('categories', 'CategoriesController')->only('show');
