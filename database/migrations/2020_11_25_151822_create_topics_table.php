@@ -21,6 +21,7 @@ class CreateTopicsTable extends Migration
             $table->unsignedBigInteger('user_id')->index();
             $table->text('excerpt')->nullable();
             $table->string('slug')->nullable();
+            $table->unsignedInteger('reply_count')->default(0);
             $table->timestamps();
         });
     }

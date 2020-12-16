@@ -21,7 +21,12 @@
                             <h3>
                                 {{ $topic->title }}
                             </h3>
-                            <span class="text-secondary d-block">{{ $topic->updated_at->diffForHumans() }}</span>
+                            <span class="text-secondary d-block">
+                                {{ $topic->created_at->diffForHumans() }}
+                                &bull;
+                                <i class="far fa-comment"></i>
+                                {{ $topic->reply_count }}
+                            </span>
                         </div>
 
                         <div class="my-4" id="topic-body">
@@ -46,6 +51,7 @@
                                 </button>
                             </form>
                         @endcan
+
                     </div>
                 </div>
 
@@ -55,6 +61,24 @@
                     </div>
 
                     <div class="card-body">
+                        @auth
+                            <div class="mb-4">
+                                <form action="{{ route('replies.store') }}" method="post">
+                                    @csrf
+                                    @include('shared._errors')
+
+                                    <input type="hidden" name="topic_id" value="{{ $topic->id }}">
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="content" rows="5" placeholder="请发表您的见解..."></textarea>
+                                    </div>
+
+                                    <button class="btn btn-primary" type="submit">
+                                        <i class="fa fa-reply"></i>
+                                        提交
+                                    </button>
+                                </form>
+                            </div>
+                        @endauth
                         <ul class="list-unstyled">
                             @foreach($replies as $reply)
                                 <li class="media my-4">
@@ -62,7 +86,13 @@
                                         <img width="64" class="mr-3" src="{{ $reply->user->avatar }}" alt="{{ $reply->user->name }}">
                                     </a>
                                     <div class="media-body">
-                                        <a href="{{ route('users.show', $reply->user) }}">{{ $reply->user->name }}</a>
+                                        <a href="{{ route('users.show', $reply->user) }}">
+                                            {{ $reply->user->name }}
+                                        </a>
+                                        <small class="text-secondary">
+                                            &bull;
+                                            {{ $reply->created_at->diffForHumans() }}
+                                        </small>
                                         <p>
                                             {!! $reply->content !!}
                                         </p>

@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Topic extends Model
 {
     protected $fillable = [
-        'title', 'body', 'category_id', 'user_id', 'excerpt', 'slug',
+        'title', 'body', 'category_id', 'user_id',
+        'excerpt', 'slug', 'reply_count',
     ];
 
     protected function serializeDate(\DateTimeInterface $date)

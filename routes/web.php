@@ -30,3 +30,5 @@ Route::middleware(['throttle:60,1'])
     ->name('topics.upload');
 
 Route::resource('categories', 'CategoriesController')->only('show');
+
+Route::resource('replies', 'ReplyController')->only(['store', 'destory']);
