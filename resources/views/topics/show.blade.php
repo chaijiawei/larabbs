@@ -49,6 +49,33 @@
                     </div>
                 </div>
 
+                <div class="card my-4">
+                    <div class="card-header bg-transparent">
+                        话题回复
+                    </div>
+
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            @foreach($replies as $reply)
+                                <li class="media my-4">
+                                    <a href="{{ route('users.show', $reply->user) }}">
+                                        <img width="64" class="mr-3" src="{{ $reply->user->avatar }}" alt="{{ $reply->user->name }}">
+                                    </a>
+                                    <div class="media-body">
+                                        <a href="{{ route('users.show', $reply->user) }}">{{ $reply->user->name }}</a>
+                                        <p>
+                                            {!! $reply->content !!}
+                                        </p>
+                                    </div>
+                                </li>
+                            @endforeach
+                        </ul>
+                        <div class="my-4">
+                            {{ $replies->appends(request()->all())->links() }}
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

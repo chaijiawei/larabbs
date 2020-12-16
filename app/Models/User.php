@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Service\ImageUpload;
-use DateTimeInterface;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -49,7 +48,7 @@ class User extends Authenticatable implements MustVerifyEmail
         return (new ImageUpload)->getFullUrl($value);
     }
 
-    protected function serializeDate(DateTimeInterface $date)
+    protected function serializeDate(\DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');
     }
@@ -57,5 +56,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function topics()
     {
         return $this->hasMany(Topic::class);
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
     }
 }

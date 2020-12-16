@@ -5,13 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Http\Requests\UsersRequest;
 use App\Service\ImageUpload;
+use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    public function show(User $user)
+    public function show(User $user, Request $request)
     {
-        $topics = $user->topics()->latest()->paginate();
-        return view('users.show', compact('user', 'topics'));
+        $topics = $replies = null;
+        if(!$request->type || $request->type === 'topics') {
+            $topics = $user->topics()->latest()->paginate();
+        }
+        if($request->type === 'replies') {
+            $replies = $user->replies()->latest()->paginate();
+        }
+        return view('users.show', compact('user', 'topics', 'replies'));
     }
 
     public function edit(User $user)

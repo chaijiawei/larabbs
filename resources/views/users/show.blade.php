@@ -41,21 +41,23 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">ta 的回复</a>
+                                <a href="{{ request()->url() }}?type=replies" class="nav-link
+                                @if(request()->query('type') === 'replies')
+                                    active
+                                @endif
+                                ">
+                                    ta 的回复
+                                </a>
                             </li>
                         </ul>
                     </div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            @foreach($topics as $topic)
-                                <li class="list-group-item">
-                                    <a href="{{ $topic->link() }}">{{ $topic->title }}</a>
-                                    <span class="float-right text-secondary">{{ $topic->created_at->diffForHumans() }}</span>
-                                </li>
-                            @endforeach
-                            <div class="my-4">
-                                {{ $topics->appends(request()->all())->links() }}
-                            </div>
+                            @if(request()->query('type') === 'topics' || !request()->query('type'))
+                                @include('users._topics')
+                            @elseif(request()->query('type') === 'replies')
+                                @include('users._replies')
+                            @endif
                         </ul>
                     </div>
                 </div>
