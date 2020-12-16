@@ -17,7 +17,7 @@ class TopicsController extends Controller
 
     public function index(Request $request)
     {
-        $topics = Topic::query()->withOrder($request->order)->paginate();
+        $topics = Topic::query()->with(['user', 'category'])->withOrder($request->order)->paginate();
         return view('topics.index', compact('topics'));
     }
 

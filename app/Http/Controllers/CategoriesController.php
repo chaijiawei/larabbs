@@ -9,7 +9,7 @@ class CategoriesController extends Controller
 {
     public function show(Category $category, Request $request)
     {
-        $topics = $category->topics()->withOrder($request->order)->paginate();
+        $topics = $category->topics()->with(['user', 'category'])->withOrder($request->order)->paginate();
         return view('topics.index', compact('topics', 'category'));
     }
 }
