@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\Models\Reply;
+use App\Notifications\ReplyNotify;
 
 class ReplyObserver
 {
@@ -17,5 +18,7 @@ class ReplyObserver
         $reply->topic->update([
             'reply_count' => $replyCount,
         ]);
+
+        $reply->topic->user->notify(new ReplyNotify($reply));
     }
 }

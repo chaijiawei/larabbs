@@ -8,7 +8,11 @@
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="text-center">作者：{{ $topic->user->name }}</h5>
+                        <h5 class="text-center">作者：
+                            <a href="{{ route('users.show', $topic->user) }}">
+                                {{ $topic->user->name }}
+                            </a>
+                        </h5>
                         <hr>
                         <img class="img-fluid" src="{{ $topic->user->avatar }}" alt="{{ $topic->user->name }}">
                     </div>
