@@ -14,11 +14,13 @@ class ReplyObserver
 
     public function created(Reply $reply)
     {
-        $replyCount = $reply->topic->replies()->count();
-        $reply->topic->update([
-            'reply_count' => $replyCount,
-        ]);
+        $reply->topic->updateReplyCount();
 
         $reply->topic->user->notify(new ReplyNotify($reply));
+    }
+
+    public function deleted(Reply $reply)
+    {
+        $reply->topic->updateReplyCount();
     }
 }

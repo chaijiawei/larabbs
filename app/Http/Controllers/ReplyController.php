@@ -18,4 +18,12 @@ class ReplyController extends Controller
 
         return back();
     }
+
+    public function destroy(Reply $reply)
+    {
+        $this->authorize('destroy', $reply);
+        $reply->delete();
+
+        return back();
+    }
 }

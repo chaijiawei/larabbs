@@ -90,9 +90,16 @@
                                         <img width="64" class="mr-3" src="{{ $reply->user->avatar }}" alt="{{ $reply->user->name }}">
                                     </a>
                                     <div class="media-body">
-                                        <a title="删除回复" href="#" class="btn text-secondary float-right">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
+                                        @can('destroy', $reply)
+                                            <form onsubmit="return confirm('确定删除？')" class="float-right" action="{{ route('replies.destroy', $reply) }}" method="post">
+                                                @csrf
+                                                @method('delete')
+
+                                                <button title="删除回复" type="submit" class="btn text-secondary">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        @endcan
                                         <a href="{{ route('users.show', $reply->user) }}">
                                             {{ $reply->user->name }}
                                         </a>
