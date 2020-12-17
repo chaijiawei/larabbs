@@ -13,6 +13,6 @@ class TopicSeeder extends Seeder
     public function run()
     {
         $topics = factory(Topic::class)->times(1000)->make();
-        Topic::query()->insert($topics->toArray());
+        Topic::query()->insert($topics->makeHidden('link')->toArray());
     }
 }

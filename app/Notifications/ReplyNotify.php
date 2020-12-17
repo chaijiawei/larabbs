@@ -32,7 +32,7 @@ class ReplyNotify extends Notification
      */
     public function via($notifiable)
     {
-        return ['database'];
+        return ['database', 'mail'];
     }
 
     /**
@@ -44,9 +44,9 @@ class ReplyNotify extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->subject('话题回复')
+                    ->line('您的话题有新的回复')
+                    ->action('查看回复', $this->reply->topic->link);
     }
 
     /**
@@ -65,7 +65,10 @@ class ReplyNotify extends Notification
     public function toDatabase($notifiable)
     {
         return [
-            'reply' => $this->reply,
+            'reply' => $this->reply->attributesToArray(),
+            'reply_user' => $this->reply->user->attributesToArray(),
+            'topic' => $this->reply->topic->attributesToArray(),
+            'topic_user' => $this->reply->topic->user->attributesToArray(),
         ];
     }
 }

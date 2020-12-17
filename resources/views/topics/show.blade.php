@@ -90,6 +90,9 @@
                                         <img width="64" class="mr-3" src="{{ $reply->user->avatar }}" alt="{{ $reply->user->name }}">
                                     </a>
                                     <div class="media-body">
+                                        <a title="删除回复" href="#" class="btn text-secondary float-right">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
                                         <a href="{{ route('users.show', $reply->user) }}">
                                             {{ $reply->user->name }}
                                         </a>
@@ -100,6 +103,7 @@
                                         <p>
                                             {!! $reply->content !!}
                                         </p>
+
                                     </div>
                                 </li>
                             @endforeach

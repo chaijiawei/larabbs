@@ -6,10 +6,13 @@ use App\Service\ImageUpload;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use Notifiable;
+    use Notifiable {
+        notify as parentNotify;
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -18,7 +21,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
         'name', 'email', 'password',
-        'avatar', 'intro',
+        'avatar', 'intro', 'notify_count',
     ];
 
     /**
@@ -38,6 +41,15 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function notify($instance)
+    {
+        if($this->id === Auth::id()) {
+            return;
+        }
+        $this->increment('notify_count');
+        $this->parentNotify($instance);
+    }
 
     public function getAvatarAttribute($value)
     {
@@ -61,5 +73,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function replies()
     {
         return $this->hasMany(Reply::class);
+    }
+
+    public function markAsRead()
+    {
+        $this->unreadNotifications->markAsRead();
+        $this->update(['notify_count' => 0]);
     }
 }

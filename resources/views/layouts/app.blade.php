@@ -56,13 +56,13 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a href="#" class="nav-link
-                                @if(Auth::user()->unreadNotifications()->exists())
+                                <a href="{{ route('notification.show') }}" class="nav-link
+                                @if(Auth::user()->notify_count > 0)
                                     text-danger
                                 @endif
                                 ">
                                     <i class="fa fa-inbox"></i>
-                                    {{ Auth::user()->unreadNotifications()->count() }}
+                                    {{ Auth::user()->notify_count }}
                                 </a>
                             </li>
                             <li class="nav-item dropdown">

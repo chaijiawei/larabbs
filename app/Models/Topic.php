@@ -12,6 +12,10 @@ class Topic extends Model
         'excerpt', 'slug', 'reply_count',
     ];
 
+    protected $appends = [
+        'link',
+    ];
+
     protected function serializeDate(\DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');
@@ -56,6 +60,11 @@ class Topic extends Model
     public function link($params = [])
     {
         return route('topics.show', array_merge(['topic' => $this->id, 'slug' => $this->slug], $params));
+    }
+
+    public function getLinkAttribute()
+    {
+        return $this->link();
     }
 
     public function replies()

@@ -32,3 +32,5 @@ Route::middleware(['throttle:60,1'])
 Route::resource('categories', 'CategoriesController')->only('show');
 
 Route::resource('replies', 'ReplyController')->only(['store', 'destory']);
+
+Route::get('notifications', 'NotificationController@show')->name('notification.show');
