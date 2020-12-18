@@ -19,5 +19,8 @@ class UserSeeder extends Seeder
                 'email' => 'jiawei_chai@126.com'
             ]
         );
+
+        User::query()->find(1)->assignRole(['founder']);
+        User::query()->find(2)->assignRole(['maintainer']);
     }
 }
