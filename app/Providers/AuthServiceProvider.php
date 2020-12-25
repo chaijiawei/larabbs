@@ -10,6 +10,8 @@ use App\Policies\TopicPolicy;
 use App\Policies\UserPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Horizon\Horizon;
+use Illuminate\Support\Facades\Auth;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -34,6 +36,14 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::before(function(User $user, $ability) {
+            if($user->can('manage_contents')) {
+                return true;
+            }
+        });
+
+        Horizon::auth(function() {
+            return Auth::user()->hasRole('founder');
+        });
     }
 }
