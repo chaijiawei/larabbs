@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Models\Role;
 use App\Models\User;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
@@ -27,16 +28,15 @@ class UserController extends AdminController
         $grid = new Grid(new User());
 
         $grid->column('id', __('Id'));
+        $grid->column('avatar', __('用户头像'))->image('', 50, 50);
         $grid->column('name', __('Name'));
         $grid->column('email', __('Email'));
-        $grid->column('email_verified_at', __('Email verified at'));
-        $grid->column('password', __('Password'));
-        $grid->column('remember_token', __('Remember token'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
-        $grid->column('avatar', __('用户头像'))->image();
-        $grid->column('intro', __('Intro'));
-        $grid->column('notify_count', __('Notify count'));
+        $grid->column('email_verified_at', __('Email verified at'));
+        $grid->column('roles', '角色')->display(function($roles) {
+            return collect($roles)->implode('name', ' | ');
+        });
 
         return $grid;
     }
@@ -93,6 +93,9 @@ class UserController extends AdminController
             }
         });
         $form->password('password_confirmation', '确认密码');
+        $form->multipleSelect('roles', '角色')->options(function($ids) {
+            return Role::all()->pluck('name', 'id');
+        });
         $form->image('avatar', __('Avatar'));
         $form->text('intro', __('Intro'));
 
