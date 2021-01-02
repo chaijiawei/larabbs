@@ -41,7 +41,7 @@ class TopicsController extends Controller
         if($topic->slug && $request->slug !== $topic->slug) {
             return redirect($topic->link());
         }
-        $replies = $topic->replies()->latest()->paginate();
+        $replies = $topic->replies()->with('user')->latest()->paginate();
         return view('topics.show', compact('topic', 'replies'));
     }
 

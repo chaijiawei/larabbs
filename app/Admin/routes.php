@@ -15,4 +15,7 @@ Route::group([
     $router->resource('users', UserController::class);
     $router->resource('roles', RoleController::class);
     $router->resource('permissions', PermissionController::class);
+    $router->resource('categories', CategoryController::class);
+    $router->resource('topics', TopicController::class);
+    $router->resource('replies', ReplyController::class);
 });
