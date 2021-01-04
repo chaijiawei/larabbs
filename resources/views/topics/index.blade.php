@@ -72,6 +72,25 @@
                         </a>
                     </div>
                 </div>
+
+                @if($activeUsers = (new App\Models\User)->getActiveUserByCache())
+                    <div class="card my-4">
+                        <div class="card-header">
+                            活跃用户
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                @foreach($activeUsers as $activeUser)
+                                    <li class="list-group-item">
+                                        <img width="32" class="mr-2" src="{{ $activeUser->avatar }}" alt="{{ $activeUser->name }}">
+                                        <a href="{{ route('users.show', $activeUser) }}">{{ $activeUser->name }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

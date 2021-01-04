@@ -64,7 +64,7 @@ class Topic extends Model
 
     public function getLinkAttribute()
     {
-        return $this->link();
+        return $this->id ? $this->link() : '';
     }
 
     public function replies()
