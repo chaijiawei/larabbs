@@ -15,11 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['verify' => true]);
 
-Route::get('phpinfo', function() {
-   phpinfo();
-});
-
-Route::get('/', 'PagesController@index')->name('home');
+Route::get('/', 'TopicsController@index')->name('home');
 
 Route::resource('users', 'UsersController');
 

@@ -39,7 +39,7 @@ class TopicController extends AdminController
         $grid->column('category.name', __('分类'));
         $grid->column('user.name', __('用户'));
         $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('updated_at', __('Updated at'))->sortable();
 
         return $grid;
     }

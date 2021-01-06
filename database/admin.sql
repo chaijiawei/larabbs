@@ -21,7 +21,7 @@
 
 LOCK TABLES `admin_menu` WRITE;
 /*!40000 ALTER TABLE `admin_menu` DISABLE KEYS */;
-INSERT INTO `admin_menu` VALUES (2,0,7,'Admin','fa-tasks','',NULL,NULL,'2021-01-02 16:44:16'),(3,2,8,'Users','fa-users','auth/users',NULL,NULL,'2021-01-02 16:44:16'),(4,2,9,'Roles','fa-user','auth/roles',NULL,NULL,'2021-01-02 16:44:16'),(5,2,10,'Permission','fa-ban','auth/permissions',NULL,NULL,'2021-01-02 16:44:16'),(6,2,11,'Menu','fa-bars','auth/menu',NULL,NULL,'2021-01-02 16:44:16'),(7,2,12,'Operation log','fa-history','auth/logs',NULL,NULL,'2021-01-02 16:44:16'),(8,0,1,'用户管理','fa-users','users',NULL,'2021-01-02 15:17:20','2021-01-02 16:44:16'),(9,0,2,'权限管理','fa-ban','permissions',NULL,'2021-01-02 15:18:21','2021-01-02 16:44:16'),(10,0,3,'角色管理','fa-user','roles',NULL,'2021-01-02 15:24:24','2021-01-02 16:44:16'),(11,0,4,'分类管理','fa-align-justify','categories',NULL,'2021-01-02 15:54:17','2021-01-02 16:44:16'),(12,0,5,'话题管理','fa-pencil-square','topics',NULL,'2021-01-02 16:17:48','2021-01-02 16:44:26'),(13,0,6,'回复管理','fa-mail-reply','replies',NULL,'2021-01-02 16:44:00','2021-01-02 16:44:26');
+INSERT INTO `admin_menu` VALUES (2,0,7,'Admin','fa-tasks','',NULL,NULL,'2021-01-02 16:44:16'),(3,2,8,'Users','fa-users','auth/users',NULL,NULL,'2021-01-02 16:44:16'),(4,2,9,'Roles','fa-user','auth/roles',NULL,NULL,'2021-01-02 16:44:16'),(5,2,10,'Permission','fa-ban','auth/permissions',NULL,NULL,'2021-01-02 16:44:16'),(6,2,11,'Menu','fa-bars','auth/menu',NULL,NULL,'2021-01-02 16:44:16'),(7,2,12,'Operation log','fa-history','auth/logs',NULL,NULL,'2021-01-02 16:44:16'),(8,0,1,'用户管理','fa-users','users',NULL,'2021-01-02 15:17:20','2021-01-02 16:44:16'),(9,0,2,'权限管理','fa-ban','permissions',NULL,'2021-01-02 15:18:21','2021-01-02 16:44:16'),(10,0,3,'角色管理','fa-user','roles',NULL,'2021-01-02 15:24:24','2021-01-02 16:44:16'),(11,0,4,'分类管理','fa-align-justify','categories',NULL,'2021-01-02 15:54:17','2021-01-02 16:44:16'),(12,0,5,'话题管理','fa-pencil-square','topics',NULL,'2021-01-02 16:17:48','2021-01-02 16:44:26'),(13,0,6,'回复管理','fa-mail-reply','replies',NULL,'2021-01-02 16:44:00','2021-01-02 16:44:26'),(14,0,0,'资源推荐','fa-link','links',NULL,'2021-01-06 14:43:24','2021-01-06 14:43:24');
 /*!40000 ALTER TABLE `admin_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,4 +103,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-02  8:45:01
+-- Dump completed on 2021-01-06  6:44:43

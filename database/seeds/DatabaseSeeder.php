@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,5 +15,9 @@ class DatabaseSeeder extends Seeder
          $this->call(UserSeeder::class);
          $this->call(TopicSeeder::class);
          $this->call(ReplySeeder::class);
+         $this->call(LinkSeeder::class);
+
+         //refresh cache
+        (new User)->refreshActiveUserCache();
     }
 }

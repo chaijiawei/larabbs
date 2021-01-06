@@ -91,6 +91,24 @@
                         </div>
                     </div>
                 @endif
+
+                @if($links = \App\Models\Link::all())
+                    <div class="card my-4">
+                        <div class="card-header">
+                            推荐资源
+                        </div>
+
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                @foreach($links as $link)
+                                    <li class="list-group-item">
+                                        <a target="_blank" href="{{ $link->href }}">{{ $link->name }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

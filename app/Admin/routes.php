@@ -18,4 +18,5 @@ Route::group([
     $router->resource('categories', CategoryController::class);
     $router->resource('topics', TopicController::class);
     $router->resource('replies', ReplyController::class);
+    $router->resource('links', LinkController::class);
 });
