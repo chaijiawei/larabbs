@@ -11,9 +11,14 @@
                         <img class="img-fluid" src="{{ $user->avatar }}" alt="{{ $user->name }}">
                         <h4 class="mt-4">个人简介</h4>
                         <p>{{ $user->intro }}</p>
+
                         <hr>
                         <h4>注册于</h4>
                         <p>{{ $user->created_at->diffForHumans() }}</p>
+
+                        <hr>
+                        <h4>最后活跃</h4>
+                        <p>{{ $user->last_login_time->diffForHumans() }}</p>
                     </div>
                 </div>
             </div>

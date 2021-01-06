@@ -6,6 +6,7 @@ use App\Service\ImageUpload;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Traits\HasRoles;
 
@@ -19,6 +20,8 @@ class User extends Authenticatable implements MustVerifyEmail
 
     use Traits\ActiveUser;
 
+    use Traits\LastLoginTime;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -27,6 +30,7 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $fillable = [
         'name', 'email', 'password',
         'avatar', 'intro', 'notify_count',
+        'last_login_time',
     ];
 
     /**
@@ -84,5 +88,16 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         $this->unreadNotifications->markAsRead();
         $this->update(['notify_count' => 0]);
+    }
+
+    public function getLastLoginTimeAttribute($value)
+    {
+        if($temp = $this->getLastLoginTime()) {
+            return Carbon::make($temp);
+        } else if($value) {
+            return $value;
+        } else {
+            return $this->created_at;
+        }
     }
 }

@@ -25,6 +25,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
          $schedule->command('larabbs:calc-active-user')->hourly();
+         $schedule->command('larabbs:sync-last-login-time')->daily();
     }
 
     /**
